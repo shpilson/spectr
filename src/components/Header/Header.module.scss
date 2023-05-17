@@ -1,0 +1,23 @@
+@use "sass:math";
+@import "../../assests/scss/mixins";
+
+.header {
+  width: 100%;
+}
+
+.wrapper {
+  max-width: rem(1240);
+  margin: 0 auto;
+  padding: rem(20);
+  justify-content: space-between;
+  align-items: center;
+  gap: rem(5);
+}
+
+.switchButton {
+  gap: rem(25);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

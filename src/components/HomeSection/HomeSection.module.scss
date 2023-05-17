@@ -1,0 +1,266 @@
+@use "sass:math";
+@import "../../assests/scss/mixins";
+@import "../../assests/scss/variables";
+
+.homeSection {
+  position: relative;
+  margin-top: rem(60);
+}
+
+.wrapperTitle {
+  margin-bottom: rem(50);
+}
+
+.titleOne {
+  font-weight: 600;
+  font-size: rem(64);
+  line-height: rem(78);
+
+  @media (max-width: 1000px) {
+    font-size: clamp(rem(26), 6.4vw, rem(64));
+    line-height: clamp(rem(32), 7.8vw, rem(78));
+  }
+}
+
+.titleTwo {
+  font-weight: 800;
+  font-size: rem(128);
+  line-height: rem(156);
+  color: $white;
+  letter-spacing: 0.2em;
+  text-shadow: -0 rem(-1) 0 $lightBlack, 0 rem(-1) 0 $lightBlack,
+    -0 rem(1) 0 $lightBlack, 0 rem(1) 0 $lightBlack, rem(-1) -0 0 $lightBlack,
+    rem(1) -0 0 $lightBlack, rem(-1) 0 0 $lightBlack, rem(1) 0 0 $lightBlack,
+    rem(-1) rem(-1) 0 $lightBlack, rem(1) rem(-1) 0 $lightBlack,
+    rem(-1) rem(1) 0 $lightBlack, rem(1) rem(1) 0 $lightBlack,
+    rem(-1) rem(-1) 0 $lightBlack, rem(1) rem(-1) 0 $lightBlack,
+    rem(-1) rem(1) 0 $lightBlack, rem(1) rem(1) 0 $lightBlack;
+  text-transform: uppercase;
+
+  @media (max-width: 1000px) {
+    font-size: clamp(rem(54), 12.8vw, rem(128));
+    line-height: clamp(rem(66), 15.6vw, rem(156));
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: rem(24);
+  line-height: rem(30);
+
+  @media (max-width: 1000px) {
+    font-size: clamp(rem(16), 2.4vw, rem(24));
+    line-height: clamp(rem(20), 3vw, rem(30));
+  }
+}
+
+.lineOne,
+.lineTwo,
+.lineThree {
+  display: block;
+  height: rem(1);
+  background-color: $lightGray;
+}
+
+.lineOne {
+  margin-top: rem(20);
+  width: 60%;
+}
+
+.lineTwo {
+  margin-top: rem(70);
+  width: 85%;
+}
+.lineThree {
+  margin-top: rem(60);
+  width: 70%;
+}
+
+.contact {
+  border: rem(1) solid $lightBlack;
+  border-radius: rem(24);
+  font-weight: 500;
+  font-size: rem(36);
+  line-height: rem(40);
+  color: $lightBlack;
+  -webkit-border-radius: rem(24);
+  -moz-border-radius: rem(24);
+  -ms-border-radius: rem(24);
+  -o-border-radius: rem(24);
+  padding: rem(30) rem(70);
+  align-self: center;
+
+  @media (max-width: 768px) {
+    padding: rem(30) clamp(rem(62), 9.11vw, rem(70));
+  }
+}
+
+.triangleAbsolute {
+  position: absolute;
+  right: rem(160);
+
+  top: rem(105);
+
+  @media (max-width: 1440px) {
+    right: adaptiv-num-rem(100, 160, 1440, 1280);
+  }
+
+  @media (max-width: 768px) {
+    top: rem(-80);
+    right: rem(30);
+  }
+}
+
+.triangleWrapper {
+  opacity: 0.8;
+  position: relative;
+  width: rem(285);
+  height: rem(356);
+
+  @media (max-width: 768px) {
+    width: rem(76);
+    height: rem(96);
+  }
+}
+
+.triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  transform: rotate(-144.21deg);
+  -webkit-transform: rotate(-144.21deg);
+  -moz-transform: rotate(-144.21deg);
+  -ms-transform: rotate(-144.21deg);
+  -o-transform: rotate(-144.21deg);
+}
+
+.triangleOne {
+  margin-left: rem(75);
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    margin-left: rem(45);
+  }
+}
+
+.triangleTwo {
+  margin-left: rem(50);
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    margin-left: rem(30);
+  }
+}
+
+.triangleThree {
+  margin-left: rem(25);
+  z-index: 3;
+
+  @media (max-width: 768px) {
+    margin-left: rem(15);
+  }
+}
+
+.triangleFour {
+  z-index: 4;
+}
+
+.triangleAbsolute2 {
+  position: absolute;
+  left: rem(145);
+  bottom: rem(-30);
+
+  @media (max-width: 1440px) {
+    left: adaptiv-num-rem(-10, 145, 1440, 768);
+  }
+
+  @media (max-width: 768px) {
+    left: rem(20);
+    bottom: rem(-5);
+  }
+}
+
+.triangleWrapper2 {
+  opacity: 0.8;
+  position: relative;
+  width: rem(213);
+  height: rem(265);
+
+  @media (max-width: 768px) {
+    width: rem(128);
+    height: rem(160);
+  }
+
+  transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+}
+
+.triangle2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  transform: rotate(-57.96deg);
+  -webkit-transform: rotate(-57.96deg);
+  -moz-transform: rotate(-57.96deg);
+  -ms-transform: rotate(-57.96deg);
+  -o-transform: rotate(-57.96deg);
+}
+
+.triangleOne2 {
+  margin-left: rem(75);
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    margin-left: rem(45);
+  }
+}
+
+.triangleTwo2 {
+  margin-left: rem(50);
+  margin-top: rem(10);
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    margin-left: rem(30);
+  }
+}
+
+.triangleThree2 {
+  margin-left: rem(25);
+  margin-top: rem(25);
+  z-index: 3;
+
+  @media (max-width: 768px) {
+    margin-left: rem(15);
+    margin-top: rem(20);
+  }
+}
+
+.triangleFour2 {
+  z-index: 4;
+  margin-top: rem(40);
+
+  @media (max-width: 768px) {
+    margin-top: rem(30);
+  }
+}

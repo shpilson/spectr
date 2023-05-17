@@ -1,0 +1,119 @@
+@use "sass:math";
+@import "../../assests/scss/mixins";
+@import "../../assests/scss/variables";
+
+.contactSection {
+  margin-top: rem(100);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+  gap: rem(15);
+  border-top: rem(1) solid #a2a2a2;
+  margin-top: rem(30);
+  padding-top: rem(30);
+}
+
+.contactLeft {
+  gap: rem(5);
+}
+
+.link {
+  font-weight: 500;
+  font-size: rem(60);
+  line-height: rem(65);
+  color: $lightBlack;
+
+  @media (max-width: 1280px) {
+    font-size: clamp(rem(36), 4.69vw, rem(60));
+    line-height: clamp(rem(39), 5.08vw, rem(65));
+  }
+}
+
+.contactFrom {
+  gap: rem(20);
+}
+
+.formText {
+  font-size: rem(24);
+  line-height: rem(30);
+  color: $lightBlack;
+
+  @media (max-width: 1000px) {
+    font-size: clamp(rem(20), 2.4vw, rem(24));
+    line-height: clamp(rem(25), 3vw, rem(30));
+  }
+}
+
+.form {
+  gap: rem(20);
+}
+
+.item {
+  border-bottom: rem(1) solid #a2a2a2;
+  position: relative;
+
+  &:hover > .label {
+    font-weight: 600;
+  }
+}
+
+.label {
+  position: absolute;
+  top: rem(15);
+  left: 0;
+}
+
+.input {
+  margin: rem(15) 0;
+}
+
+.input:focus {
+  font-weight: 600;
+}
+
+.input:focus ~ .label,
+.input:not(:placeholder-shown).input:not(:focus) ~ .label {
+  top: rem(-10);
+  opacity: 1;
+  font-size: rem(12);
+}
+
+.label,
+.input,
+.textarea {
+  width: 100%;
+  font-weight: 500;
+  font-size: rem(24);
+  line-height: rem(30);
+  color: $lightBlack;
+  cursor: pointer;
+
+  @media (max-width: 1000px) {
+    font-size: clamp(rem(20), 2.4vw, rem(24));
+    line-height: clamp(rem(25), 3vw, rem(30));
+  }
+}
+
+.textarea {
+  resize: none;
+  height: rem(125);
+}
+
+.sendButton {
+  margin-top: rem(20);
+  border: rem(1) solid $lightBlack;
+  border-radius: rem(20);
+  -webkit-border-radius: rem(20);
+  -moz-border-radius: rem(20);
+  -ms-border-radius: rem(20);
+  -o-border-radius: rem(20);
+  font-weight: 500;
+  font-size: rem(18);
+  line-height: rem(22);
+  color: #171717;
+  background-color: transparent;
+  cursor: pointer;
+  padding: rem(24);
+}

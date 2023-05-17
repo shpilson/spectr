@@ -1,0 +1,26 @@
+@use "sass:math";
+@import "../../assests/scss/mixins";
+@import "../../assests/scss/variables";
+
+.menu {
+  width: rem(16);
+  height: rem(14);
+  justify-content: center;
+  gap: rem(4);
+  cursor: pointer;
+
+  span {
+    background-color: $lightBlack;
+    display: block;
+    height: rem(2);
+
+    &:nth-child(1),
+    &:nth-child(3) {
+      width: 100%;
+    }
+
+    &:nth-child(2) {
+      width: 80%;
+    }
+  }
+}

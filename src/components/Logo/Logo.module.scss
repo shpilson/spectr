@@ -1,0 +1,29 @@
+@use "sass:math";
+@import "../../assests/scss/mixins";
+@import "../../assests/scss/variables";
+
+.logo {
+  gap: rem(5);
+  align-items: center;
+}
+
+.img {
+  width: rem(70);
+  height: rem(60);
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: rem(18);
+  line-height: rem(20);
+  color: $lightBlack;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
