@@ -72,16 +72,16 @@ html {
   width: rem(70);
   height: rem(54);
   position: absolute;
-  top: 0;
+  top: rem(-3);
   right: rem(-114);
 
   @media (max-width: 1000px) {
     right: adaptiv-num-rem(-104, -114, 1000, 600);
-    top: adaptiv-num-rem(-10, 0, 1000, 600);
+    top: adaptiv-num-rem(-13, -3, 1000, 600);
   }
 
   @media (max-width: 600px) {
-    top: rem(-10);
+    top: rem(-13);
   }
 
   img {

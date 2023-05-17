@@ -1,8 +1,14 @@
 @use "sass:math";
 @import "../../assests/scss/mixins";
+@import "../../assests/scss/variables";
 
 .header {
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  // background-color: $white;
 }
 
 .wrapper {
@@ -12,6 +18,13 @@
   justify-content: space-between;
   align-items: center;
   gap: rem(5);
+
+  @media (max-width: 1000px) {
+    padding: adaptiv-num-rem(10, 20, 100, 768) rem(20);
+  }
+  @media (max-width: 768px) {
+    padding: rem(10), rem(20);
+  }
 }
 
 .switchButton {

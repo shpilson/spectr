@@ -4,7 +4,7 @@
 
 .homeSection {
   position: relative;
-  margin-top: rem(60);
+  margin-top: rem(160);
 }
 
 .wrapperTitle {
@@ -15,10 +15,25 @@
   font-weight: 600;
   font-size: rem(64);
   line-height: rem(78);
+  text-transform: uppercase;
 
   @media (max-width: 1000px) {
     font-size: clamp(rem(26), 6.4vw, rem(64));
     line-height: clamp(rem(32), 7.8vw, rem(78));
+  }
+}
+
+.wordAbsolute {
+  position: relative;
+  width: rem(735);
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 1000px) {
+    width: clamp(rem(305), 73.5vw, rem(735));
   }
 }
 
