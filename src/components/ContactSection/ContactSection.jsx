@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useRef } from "react";
 import s from "./ContactSection.module.scss";
 import cn from "classnames";
 import { Link } from "react-router-dom";
 import titleIcon from "./assets/images/photo/titleIcon.svg";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useScroll,
+} from "framer-motion";
 
 const ContactSection = () => {
+  let ref = useRef(null);
+  let { scrollYProgress } = useScroll({
+    target: ref,
+  });
+  let y = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
+
   return (
     <div className={cn(s.contactSection)} id="contact">
       <div className="d-fl-col contactSection__container">
-        <div className="titleIcon">
+        <div ref={ref} className="titleIcon">
           <h2 className="title">Контакты</h2>
-          <span className="iconTriangle">
+          <motion.span style={{ y }} className="iconTriangle">
             <img src={titleIcon} alt="иконка треугольника" />
-          </span>
+          </motion.span>
         </div>
         <div className={s.grid}>
           <div className={cn(s.contactLeft, "d-fl-col")}>

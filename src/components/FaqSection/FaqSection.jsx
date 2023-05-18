@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import s from "./FaqSection.module.scss";
 import cn from "classnames";
 import faqData from "../../assests/data/faqData.json";
 import { FaqBlock } from "../FaqBlock/FaqBlock";
 import titleIcon from "./assets/images/photo/titleIcon.svg";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useScroll,
+} from "framer-motion";
 
 const FaqSection = () => {
   const [selected, setSelected] = useState(null);
@@ -16,14 +22,20 @@ const FaqSection = () => {
     setSelected(i);
   };
 
+  let ref = useRef(null);
+  let { scrollYProgress } = useScroll({
+    target: ref,
+  });
+  let y = useTransform(scrollYProgress, [0, 1], ["-40%", "0%"]);
+
   return (
     <div className={cn(s.faqSection)}>
       <div className="d-fl-col faqSection__container">
-        <div className="titleIcon">
+        <div ref={ref} className="titleIcon">
           <h2 className="title">Частые вопросы</h2>
-          <span className="iconTriangle">
+          <motion.span style={{ y }} className="iconTriangle">
             <img src={titleIcon} alt="иконка треугольника" />
-          </span>
+          </motion.span>
         </div>
 
         <div className={s.grid}>

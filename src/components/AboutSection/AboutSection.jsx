@@ -1,20 +1,52 @@
-import React from "react";
+import React, { useRef } from "react";
 import s from "./AboutSection.module.scss";
 import cn from "classnames";
 import { ConsultationBlock } from "../ConsultationBlock/ConsultationBlock";
 import { ServicesBlock } from "../ServicesBlock/ServicesBlock";
 import titleIcon from "./assets/images/photo/titleIcon.svg";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useScroll,
+} from "framer-motion";
+
+// const ImgParallax = ({ speed }) => {
+//   const { scrollYProgress } = useViewportScroll();
+//   const yValue = useTransform(scrollYProgress, [0, 1], [0, -10 * speed]);
+
+//   return (
+//     <motion.span
+//       className="iconTriangle"
+//       initial={{ opacity: 0 }}
+//       animate={{ opacity: 1 }}
+//       transition={{ duration: 1 }}
+//       viewport={{ once: true }}
+//       style={{ y: yValue }}
+//     >
+//       <img src={titleIcon} alt="иконка треугольника" />
+//     </motion.span>
+//   );
+// };
 
 const AboutSection = () => {
+  // let { scrollYProgress } = useScroll();
+  let ref = useRef(null);
+  let { scrollYProgress } = useScroll({
+    target: ref,
+  });
+  let y = useTransform(scrollYProgress, [0, 1], ["-40%", "0%"]);
+
   return (
     <div className={cn(s.aboutSection)}>
       <div className="d-fl-col aboutSection__container">
         <article className="d-fl-col">
-          <div className="titleIcon">
+          <div ref={ref} className="titleIcon">
             <h2 className="title">О нас</h2>
-            <span className="iconTriangle">
+            <motion.span style={{ y }} className="iconTriangle">
               <img src={titleIcon} alt="иконка треугольника" />
-            </span>
+            </motion.span>
+            {/* <ImgParallax speed={5} /> */}
           </div>
 
           <hr className={s.line} />

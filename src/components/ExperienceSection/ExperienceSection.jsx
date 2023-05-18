@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import s from "./ExperienceSection.module.scss";
 import cn from "classnames";
 import img10 from "./assets/images/photo/10.svg";
@@ -8,16 +8,27 @@ import fondTwo from "./assets/images/photo/fondTwo.svg";
 import fondThree from "./assets/images/photo/fondThree.svg";
 import fondFour from "./assets/images/photo/fondFour.svg";
 import titleIcon from "./assets/images/photo/titleIcon.svg";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useScroll,
+} from "framer-motion";
 
 const ExperienceSection = () => {
+  let ref = useRef(null);
+  let { scrollYProgress } = useScroll({
+    target: ref,
+  });
+  let y = useTransform(scrollYProgress, [0, 1], ["-40%", "0%"]);
   return (
     <div className={cn(s.experienceSection)} id="experience">
       <div className="d-fl-col experienceSection__container">
-        <div className="titleIcon">
+        <div ref={ref} className="titleIcon">
           <h2 className="title">Опыт</h2>
-          <span className="iconTriangle">
+          <motion.span style={{ y }} className="iconTriangle">
             <img src={titleIcon} alt="иконка треугольника" />
-          </span>
+          </motion.span>
         </div>
         <div className={cn(s.info)}>
           <div className={cn(s.block, "d-fl-col")}>

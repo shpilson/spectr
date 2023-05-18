@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useRef } from "react";
 import s from "./ConsultationBlock.module.scss";
 import cn from "classnames";
 import letter from "./assets/images/photo/letter.svg";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useScroll,
+} from "framer-motion";
 
 const ConsultationBlock = () => {
+  let ref = useRef(null);
+  let { scrollYProgress } = useScroll({
+    target: ref,
+  });
+  let y = useTransform(scrollYProgress, [0, 1], ["-40%", "0%"]);
+
   return (
     <div className={cn(s.consultationBlock)}>
       <article className="d-fl-col">
-        <div className="subtitle__wrapper">
+        <div ref={ref} className="subtitle__wrapper">
           <h2 className="subtitle">Консультации</h2>
-          <span>
+          <motion.span style={{ y }}>
             <img src={letter} alt="буква К фон" />
-          </span>
+          </motion.span>
         </div>
         <ul className={s.list}>
           <li className={cn("list__item d-fl")}>

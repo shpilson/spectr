@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import s from "./SeminarSection.module.scss";
 import cn from "classnames";
 import sliderData from "../../assests/data/sliderData.json";
@@ -6,8 +6,20 @@ import { Slide } from "../Slide/Slide";
 import Slider from "react-slick";
 import titleIcon from "./assets/images/photo/titleIcon.svg";
 import star from "./assets/images/photo/star.svg";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useScroll,
+} from "framer-motion";
 
 const SeminarSection = () => {
+  let ref = useRef(null);
+  let { scrollYProgress } = useScroll({
+    target: ref,
+  });
+  let y = useTransform(scrollYProgress, [0, 1], ["-40%", "0%"]);
+
   const settings = {
     dots: false,
     infinite: false,
@@ -30,11 +42,11 @@ const SeminarSection = () => {
   return (
     <div className={cn(s.seminarSection)}>
       <div className="d-fl-col seminarSection__container">
-        <div className="titleIcon">
+        <div ref={ref} className="titleIcon">
           <h2 className="title">Семинары</h2>
-          <span className="iconTriangle">
+          <motion.span style={{ y }} className="iconTriangle">
             <img src={titleIcon} alt="иконка треугольника" />
-          </span>
+          </motion.span>
         </div>
 
         <Slider {...settings}>

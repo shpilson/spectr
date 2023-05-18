@@ -17,7 +17,7 @@
   padding: rem(20);
   justify-content: space-between;
   align-items: center;
-  gap: rem(5);
+  gap: rem(10);
 
   @media (max-width: 1000px) {
     padding: adaptiv-num-rem(10, 20, 100, 768) rem(20);
