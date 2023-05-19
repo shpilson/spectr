@@ -62,4 +62,12 @@
   font-weight: 500;
   font-size: rem(18);
   line-height: rem(22);
+
+  &::after {
+    border-radius: rem(20);
+    -webkit-border-radius: rem(20);
+    -moz-border-radius: rem(20);
+    -ms-border-radius: rem(20);
+    -o-border-radius: rem(20);
+  }
 }

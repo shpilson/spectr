@@ -108,6 +108,14 @@
   @media (max-width: 768px) {
     padding: rem(30) clamp(rem(62), 9.11vw, rem(70));
   }
+
+  &::after {
+    border-radius: rem(24);
+    -webkit-border-radius: rem(24);
+    -moz-border-radius: rem(24);
+    -ms-border-radius: rem(24);
+    -o-border-radius: rem(24);
+  }
 }
 
 .triangleAbsolute {
