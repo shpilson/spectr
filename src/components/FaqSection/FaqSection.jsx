@@ -32,7 +32,7 @@ const FaqSection = () => {
     <div className={cn(s.faqSection)}>
       <div className="d-fl-col faqSection__container">
         <div ref={ref} className="titleIcon">
-          <h2 className="title">Частые вопросы</h2>
+          <h2 className={cn(s.titleSection, "title")}>Частые вопросы</h2>
           <motion.span style={{ y }} className="iconTriangle">
             <img src={titleIcon} alt="иконка треугольника" />
           </motion.span>

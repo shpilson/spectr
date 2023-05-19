@@ -64,6 +64,16 @@
     &::before {
       background-image: url("../../assests/image/icon/themeBlack.svg");
     }
+
+    &:hover::after {
+      background: linear-gradient(
+        90deg,
+        #d3adad 0%,
+        #d3c4ad 33.85%,
+        #adcad3 65.1%,
+        #e5adff 100%
+      );
+    }
   }
 
   &:checked + label::after {

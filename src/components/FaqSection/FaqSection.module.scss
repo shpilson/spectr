@@ -5,6 +5,12 @@
 .faqSection {
 }
 
+.titleSection {
+  @media (max-width: 480px) {
+    max-width: rem(180);
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));

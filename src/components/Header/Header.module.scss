@@ -4,9 +4,11 @@
 
 .header {
   width: 100%;
+  // position: -webkit-sticky;
+  // position: sticky;
   position: fixed;
-  top: 0;
   left: 0;
+  top: 0;
   z-index: 1000;
   // background-color: $white;
 }
