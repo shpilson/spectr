@@ -6,6 +6,7 @@ import triangleTwo from "./assets/images/photo/triangleTwo.svg";
 import triangleThree from "./assets/images/photo/triangleThree.svg";
 import triangleFour from "./assets/images/photo/triangleFour.svg";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 const textAnimation = {
   hidden: {
@@ -395,7 +396,15 @@ const HomeSection = () => {
           variants={textAnimation}
           custom={2.6}
         >
-          <span>Связаться</span>
+          <Link
+            to="contact"
+            smooth={true}
+            offset={-150}
+            duration={500}
+            className={s.linkButton}
+          >
+            Связаться
+          </Link>
         </motion.button>
 
         <motion.hr

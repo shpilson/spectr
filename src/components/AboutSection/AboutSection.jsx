@@ -46,7 +46,6 @@ const AboutSection = () => {
             <motion.span style={{ y }} className="iconTriangle">
               <img src={titleIcon} alt="иконка треугольника" />
             </motion.span>
-            {/* <ImgParallax speed={5} /> */}
           </div>
 
           <hr className={s.line} />

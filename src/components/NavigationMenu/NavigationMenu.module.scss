@@ -13,6 +13,16 @@
   -o-border-radius: rem(50);
   padding: rem(5) rem(5) rem(5) rem(20);
   background-color: $white;
+  margin-left: rem(75);
+
+  @media (max-width: 1000px) {
+    margin-left: 0;
+    margin-right: adaptiv-num-rem(0, 50, 1000, 795);
+  }
+
+  @media (max-width: 795px) {
+    margin-right: 0;
+  }
 }
 
 .navigation {
@@ -62,6 +72,7 @@
   font-weight: 500;
   font-size: rem(18);
   line-height: rem(22);
+  cursor: pointer;
 
   &::after {
     border-radius: rem(20);

@@ -17,7 +17,7 @@ const ConsultationBlock = () => {
   let y = useTransform(scrollYProgress, [0, 1], ["-40%", "0%"]);
 
   return (
-    <div className={cn(s.consultationBlock)}>
+    <div className={cn(s.consultationBlock)} id="services">
       <article className="d-fl-col">
         <div ref={ref} className="subtitle__wrapper">
           <h2 className="subtitle">Консультации</h2>

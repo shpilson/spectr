@@ -92,6 +92,21 @@
 }
 
 .contact {
+  align-self: center;
+
+  &::after {
+    border-radius: rem(24);
+    -webkit-border-radius: rem(24);
+    -moz-border-radius: rem(24);
+    -ms-border-radius: rem(24);
+    -o-border-radius: rem(24);
+  }
+}
+
+.linkButton {
+  position: relative;
+  display: block;
+  z-index: 1;
   border: rem(1) solid $lightBlack;
   border-radius: rem(24);
   font-weight: 500;
@@ -103,18 +118,9 @@
   -ms-border-radius: rem(24);
   -o-border-radius: rem(24);
   padding: rem(30) rem(70);
-  align-self: center;
 
   @media (max-width: 768px) {
     padding: rem(30) clamp(rem(62), 9.11vw, rem(70));
-  }
-
-  &::after {
-    border-radius: rem(24);
-    -webkit-border-radius: rem(24);
-    -moz-border-radius: rem(24);
-    -ms-border-radius: rem(24);
-    -o-border-radius: rem(24);
   }
 }
 
@@ -128,9 +134,17 @@
     right: adaptiv-num-rem(100, 160, 1440, 1280);
   }
 
+  @media (max-width: 1000px) {
+    top: adaptiv-num-rem(20, 105, 1000, 768);
+  }
+
   @media (max-width: 768px) {
-    top: rem(-80);
+    top: adaptiv-num-rem(-80, 180, 768, 480);
     right: rem(30);
+  }
+
+  @media (max-width: 480px) {
+    top: rem(-80);
   }
 }
 
@@ -141,6 +155,11 @@
   height: rem(356);
 
   @media (max-width: 768px) {
+    width: adaptiv-num-rem(76, 157, 768, 480);
+    height: adaptiv-num-rem(96, 177, 768, 480);
+  }
+
+  @media (max-width: 480px) {
     width: rem(76);
     height: rem(96);
   }
@@ -167,28 +186,39 @@
 }
 
 .triangleOne {
-  margin-left: rem(75);
+  margin-left: rem(90);
   z-index: 1;
 
   @media (max-width: 768px) {
+    margin-left: rem(60);
+  }
+  @media (max-width: 480px) {
     margin-left: rem(45);
   }
 }
 
 .triangleTwo {
-  margin-left: rem(50);
+  margin-left: rem(60);
   z-index: 2;
 
   @media (max-width: 768px) {
+    margin-left: rem(40);
+  }
+
+  @media (max-width: 480px) {
     margin-left: rem(30);
   }
 }
 
 .triangleThree {
-  margin-left: rem(25);
+  margin-left: rem(30);
   z-index: 3;
 
   @media (max-width: 768px) {
+    margin-left: rem(20);
+  }
+
+  @media (max-width: 480px) {
     margin-left: rem(15);
   }
 }

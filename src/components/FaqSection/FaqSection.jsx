@@ -58,11 +58,11 @@ const FaqSection = () => {
                   >
                     <div className={cn(s.title, "d-fl")}>
                       <h2>{el.title}</h2>
-                      <span
+                      <div
                         className={
                           selected === i ? s.iconPlus__show : s.iconPlus
                         }
-                      ></span>
+                      ></div>
                     </div>
                     <div
                       className={selected === i ? s.content__show : s.content}

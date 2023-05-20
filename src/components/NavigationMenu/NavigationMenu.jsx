@@ -13,7 +13,7 @@ const NavigationMenu = () => {
           <Link
             to="services"
             smooth={true}
-            offset={0}
+            offset={-200}
             duration={500}
             className={s.link}
           >
@@ -22,7 +22,7 @@ const NavigationMenu = () => {
           <Link
             to="experience"
             smooth={true}
-            offset={0}
+            offset={-150}
             duration={500}
             className={s.link}
           >
@@ -31,16 +31,22 @@ const NavigationMenu = () => {
           <Link
             to="contact"
             smooth={true}
-            offset={0}
+            offset={-150}
             duration={500}
             className={s.link}
           >
             Контакты
           </Link>
         </nav>
-        <button className={cn(s.contact, "button__animation")}>
+        <Link
+          className={cn(s.contact, "button__animation")}
+          to="contact"
+          smooth={true}
+          offset={-150}
+          duration={500}
+        >
           <span>Связаться</span>
-        </button>
+        </Link>
       </div>
     </>
   );

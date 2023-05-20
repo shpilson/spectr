@@ -111,44 +111,60 @@
 }
 
 .iconPlus {
-  position: relative;
-  z-index: 1;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: rem(42);
+  height: rem(42);
+  background-image: url("../../assests/image/icon/plus.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 
   &__show {
-    position: relative;
-    z-index: 1;
+    width: rem(42);
+    height: rem(42);
+    background-image: url("../../assests/image/icon/minus.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
-  &__show::after,
-  &__show::before,
-  &::after,
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    display: block;
-    width: rem(31);
-    height: rem(1);
-    background-color: $lightBlack;
-    flex-grow: 0;
-    flex-shrink: 0;
-  }
+  // &__show {
+  //   position: relative;
+  //   z-index: 1;
+  // }
 
-  &__show::after,
-  &::after {
-    transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    right: rem(-1);
-  }
+  // &__show::after,
+  // &__show::before,
+  // &::after,
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   z-index: 1;
+  //   top: 0;
+  //   right: 0;
+  //   display: flex;
+  //   width: rem(31);
+  //   height: rem(1);
+  //   background-color: $lightBlack;
+  //   flex-grow: 0;
+  //   flex-shrink: 0;
+  // }
 
-  &__show::after {
-    display: none;
-  }
+  // &__show::after,
+  // &::after {
+  //   transform: rotate(90deg);
+  //   -webkit-transform: rotate(90deg);
+  //   -moz-transform: rotate(90deg);
+  //   -ms-transform: rotate(90deg);
+  //   -o-transform: rotate(90deg);
+  //   right: rem(-1);
+  // }
+
+  // &__show::after {
+  //   display: none;
+  // }
 }
 
 .content {

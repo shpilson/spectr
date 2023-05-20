@@ -16,7 +16,7 @@ const ServicesBlock = () => {
   });
   let y = useTransform(scrollYProgress, [0, 1], ["-40%", "0%"]);
   return (
-    <div className={cn(s.servicesBlock)} id="services">
+    <div className={cn(s.servicesBlock)}>
       <article className="d-fl-col">
         <div ref={ref} className="subtitle__wrapper">
           <h2 className="subtitle">Документационно-организационные услуги</h2>
