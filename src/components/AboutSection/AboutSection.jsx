@@ -11,26 +11,29 @@ import {
   useScroll,
 } from "framer-motion";
 
-// const ImgParallax = ({ speed }) => {
-//   const { scrollYProgress } = useViewportScroll();
-//   const yValue = useTransform(scrollYProgress, [0, 1], [0, -10 * speed]);
+const titleAnimation = {
+  hidden: {
+    y: 50,
+    opacity: 0,
+  },
+  visible: (custom) => ({
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: custom * 0.3 },
+  }),
+};
 
-//   return (
-//     <motion.span
-//       className="iconTriangle"
-//       initial={{ opacity: 0 }}
-//       animate={{ opacity: 1 }}
-//       transition={{ duration: 1 }}
-//       viewport={{ once: true }}
-//       style={{ y: yValue }}
-//     >
-//       <img src={titleIcon} alt="иконка треугольника" />
-//     </motion.span>
-//   );
-// };
+const textAnimation = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: (custom) => ({
+    opacity: 1,
+    transition: { duration: 0.5, delay: custom * 0.3 },
+  }),
+};
 
 const AboutSection = () => {
-  // let { scrollYProgress } = useScroll();
   let ref = useRef(null);
   let { scrollYProgress } = useScroll({
     target: ref,
@@ -38,11 +41,18 @@ const AboutSection = () => {
   let y = useTransform(scrollYProgress, [0, 1], ["-40%", "0%"]);
 
   return (
-    <div className={cn(s.aboutSection)}>
+    <motion.div
+      className={cn(s.aboutSection)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <div className="d-fl-col aboutSection__container">
         <article className="d-fl-col">
           <div ref={ref} className="titleIcon">
-            <h2 className="title">О нас</h2>
+            <motion.h2 className="title" variants={titleAnimation} custom={2}>
+              О нас
+            </motion.h2>
             <motion.span style={{ y }} className="iconTriangle">
               <img src={titleIcon} alt="иконка треугольника" />
             </motion.span>
@@ -50,7 +60,11 @@ const AboutSection = () => {
 
           <hr className={s.line} />
 
-          <div className={cn(s.description, "d-fl-col")}>
+          <motion.div
+            className={cn(s.description, "d-fl-col")}
+            variants={textAnimation}
+            custom={3.5}
+          >
             <p className={s.text}>
               Мы стремимся предоставить нашим клиентам <span>наилучший </span>
               сервис и наиболее эффективные решения для их бизнеса.
@@ -65,13 +79,13 @@ const AboutSection = () => {
               в срок <br /> и в соответствии с
               <span> высокими стандартами качества.</span>
             </p>
-          </div>
+          </motion.div>
         </article>
 
         <ConsultationBlock />
         <ServicesBlock />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

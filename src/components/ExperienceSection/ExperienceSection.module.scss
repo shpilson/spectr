@@ -86,19 +86,37 @@
   position: relative;
   margin: 0 auto;
 
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+  // img {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: contain;
+  // }
 }
 
 .numberOne {
-  width: rem(230);
-  height: rem(128);
+  // width: rem(230);
+  // height: rem(128);
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: rem(128);
+  line-height: 100%;
+  color: #ffffff;
+
+  background: linear-gradient(
+    243.28deg,
+    #d3cfad 57.64%,
+    rgba(173, 255, 196, 0) 101.63%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  // text-fill-color: transparent;
+
+  opacity: 0.8;
 }
 .numberTwo {
   width: rem(137);

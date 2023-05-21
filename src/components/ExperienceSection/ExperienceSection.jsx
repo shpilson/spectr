@@ -34,7 +34,8 @@ const ExperienceSection = () => {
           <div className={cn(s.block, "d-fl-col")}>
             <span className={s.blockTitle}>Свыше</span>
             <div className={cn(s.number, s.numberOne)}>
-              <img src={img350} alt="350 реализованных проектов" />
+              350
+              {/* <img src={img350} alt="350 реализованных проектов" /> */}
             </div>
             <span className={s.blockTitle}>успешно реализованных проектов</span>
           </div>
