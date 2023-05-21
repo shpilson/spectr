@@ -17,6 +17,11 @@
   max-width: rem(70);
   max-height: rem(60);
 
+  @media (min-width: 1440px) {
+    width: rem(70);
+    height: rem(60);
+  }
+
   svg {
     width: 100%;
     height: 100%;

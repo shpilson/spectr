@@ -126,6 +126,7 @@
 
 .triangleAbsolute {
   position: absolute;
+  z-index: 999;
   right: rem(160);
 
   top: rem(105);
@@ -141,6 +142,7 @@
   @media (max-width: 768px) {
     top: adaptiv-num-rem(-80, 180, 768, 480);
     right: rem(30);
+    z-index: 1000;
   }
 
   @media (max-width: 480px) {

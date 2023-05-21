@@ -1,12 +1,17 @@
 import s from "./HomeSection.module.scss";
 import cn from "classnames";
-import React from "react";
+import React, { useRef } from "react";
 import triangle from "./assets/images/photo/triangle.svg";
 import triangleTwo from "./assets/images/photo/triangleTwo.svg";
 import triangleThree from "./assets/images/photo/triangleThree.svg";
 import triangleFour from "./assets/images/photo/triangleFour.svg";
-import { motion } from "framer-motion";
 import { Link } from "react-scroll";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useScroll,
+} from "framer-motion";
 
 const textAnimation = {
   hidden: {
@@ -16,7 +21,7 @@ const textAnimation = {
   visible: (custom) => ({
     y: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
@@ -28,7 +33,7 @@ const lineAnimation1 = {
   visible: (custom) => ({
     opacity: 1,
     width: 85,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
@@ -40,7 +45,7 @@ const lineAnimation2 = {
   visible: (custom) => ({
     opacity: 1,
     width: 96,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
@@ -52,17 +57,66 @@ const lineAnimation3 = {
   visible: (custom) => ({
     opacity: 1,
     width: 212,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
-const bigSquare = {
+const smallSquare = {
   hidden: {
     opacity: 0,
   },
   visible: (custom) => ({
     opacity: 1,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.2, delay: custom * 0.3 },
+  }),
+};
+
+const bigSquare1 = {
+  hidden: {
+    opacity: 0,
+    height: 0,
+  },
+  visible: (custom) => ({
+    opacity: 1,
+    height: 133,
+    transition: { duration: 0.7, delay: custom * 0.3 },
+  }),
+};
+
+const bigSquare2 = {
+  hidden: {
+    opacity: 0,
+    width: 0,
+  },
+  visible: (custom) => ({
+    opacity: 1,
+    width: 133,
+    transition: { duration: 0.7, delay: custom * 0.3 },
+  }),
+};
+const bigSquare3 = {
+  hidden: {
+    opacity: 0,
+    height: 0,
+    transform: "translateY(278px) scale(1, -1)",
+  },
+  visible: (custom) => ({
+    opacity: 1,
+    height: 133,
+    transition: { duration: 0.7, delay: custom * 0.3 },
+  }),
+};
+
+const bigSquare4 = {
+  hidden: {
+    opacity: 0,
+    width: 0,
+    transform: "translateX(1433px) scale(-1, 1)",
+  },
+  visible: (custom) => ({
+    opacity: 1,
+    width: 133,
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
@@ -72,7 +126,7 @@ const opacityAnimation = {
   },
   visible: (custom) => ({
     opacity: 1,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
@@ -82,7 +136,7 @@ const triangleOneAnimation = {
   },
   visible: (custom) => ({
     opacity: 1,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
@@ -96,7 +150,7 @@ const triangleTwoAnimation = {
     y: 0,
     x: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
@@ -110,7 +164,7 @@ const triangleThreeAnimation = {
     y: 0,
     x: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
@@ -124,7 +178,7 @@ const triangleFourAnimation = {
     y: 0,
     x: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
@@ -134,7 +188,7 @@ const triangleOneAnimation2 = {
   },
   visible: (custom) => ({
     opacity: 1,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
@@ -148,7 +202,7 @@ const triangleTwoAnimation2 = {
     y: 0,
     x: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
@@ -162,7 +216,7 @@ const triangleThreeAnimation2 = {
     y: 0,
     x: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
@@ -176,11 +230,16 @@ const triangleFourAnimation2 = {
     y: 0,
     x: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: custom * 0.3 },
+    transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
 
 const HomeSection = () => {
+  let ref = useRef(null);
+  let { scrollYProgress } = useScroll({
+    target: ref,
+  });
+  let y = useTransform(scrollYProgress, [0, 1], ["-20%", "0%"]);
   return (
     <motion.div
       className={cn(s.homeSection)}
@@ -311,33 +370,51 @@ const HomeSection = () => {
                 custom={3.5}
               />
               <motion.rect
+                x="720.5"
+                y="140"
+                stroke="black"
+                height="133"
+                width="0.1"
+                variants={bigSquare3}
+                custom={7.5}
+              />
+              <motion.rect
+                x="716.5"
+                y="1.5"
+                width="7"
+                height="7"
+                fill="white"
+                stroke="#171717"
+                variants={smallSquare}
+                custom={9.5}
+              />
+              <motion.rect
+                x="586"
+                y="139.5"
+                stroke="black"
+                height="0.1"
+                width="133"
+                variants={bigSquare2}
+                custom={5.5}
+              />
+              <motion.rect
+                x="716.5"
+                y="136.5"
+                width="7"
+                height="7"
+                fill="white"
+                stroke="#171717"
+                variants={smallSquare}
+                custom={7.5}
+              />
+              <motion.rect
                 x="586.5"
-                y="5.5"
-                width="134"
-                height="134"
-                stroke="#171717"
-                variants={bigSquare}
-                custom={4}
-              />
-              <motion.rect
-                x="716.5"
-                y="1.5"
-                width="7"
-                height="7"
-                fill="white"
-                stroke="#171717"
-                variants={bigSquare}
-                custom={4}
-              />
-              <motion.rect
-                x="582.5"
-                y="1.5"
-                width="7"
-                height="7"
-                fill="white"
-                stroke="#171717"
-                variants={bigSquare}
-                custom={4}
+                y="5"
+                stroke="black"
+                width="0.1"
+                height="133"
+                variants={bigSquare1}
+                custom={3.5}
               />
               <motion.rect
                 x="582.5"
@@ -346,18 +423,27 @@ const HomeSection = () => {
                 height="7"
                 fill="white"
                 stroke="#171717"
-                variants={bigSquare}
-                custom={4}
+                variants={smallSquare}
+                custom={5.5}
               />
               <motion.rect
                 x="716.5"
-                y="136.5"
+                y="5"
+                stroke="black"
+                height="0.1"
+                width="133"
+                variants={bigSquare4}
+                custom={9.5}
+              />
+              <motion.rect
+                x="582.5"
+                y="1.5"
                 width="7"
                 height="7"
                 fill="white"
                 stroke="#171717"
-                variants={bigSquare}
-                custom={4}
+                variants={smallSquare}
+                custom={11.5}
               />
               <motion.rect
                 x="210"
@@ -375,8 +461,8 @@ const HomeSection = () => {
                 height="7"
                 fill="white"
                 stroke="#171717"
-                variants={bigSquare}
-                custom={5}
+                variants={smallSquare}
+                custom={5.5}
               />
             </svg>
           </motion.div>
@@ -419,7 +505,7 @@ const HomeSection = () => {
         />
       </div>
 
-      <div className={s.triangleAbsolute}>
+      <motion.div className={s.triangleAbsolute} ref={ref} style={{ y }}>
         <div className={s.triangleWrapper}>
           <div className={cn(s.triangle, s.triangleOne)}>
             <motion.img
@@ -454,9 +540,9 @@ const HomeSection = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className={s.triangleAbsolute2}>
+      <motion.div className={s.triangleAbsolute2} ref={ref} style={{ y }}>
         <div className={s.triangleWrapper2}>
           <div className={cn(s.triangle2, s.triangleOne2)}>
             <motion.img
@@ -491,7 +577,7 @@ const HomeSection = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

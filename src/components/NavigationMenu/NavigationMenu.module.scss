@@ -62,6 +62,7 @@
 }
 
 .contact {
+  z-index: 1001;
   border: rem(1) solid $lightBlack;
   border-radius: rem(20);
   -webkit-border-radius: rem(20);
