@@ -85,6 +85,12 @@
 .number {
   position: relative;
   margin: 0 auto;
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: rem(128);
+  line-height: rem(128);
+  opacity: 0.8;
 
   // img {
   //   position: absolute;
@@ -94,16 +100,16 @@
   //   height: 100%;
   //   object-fit: contain;
   // }
+
+  @media (max-width: 1000px) {
+    font-size: clamp(rem(118), 12.8vw, rem(128));
+    line-height: clamp(rem(118), 12.8vw, rem(128));
+  }
 }
 
 .numberOne {
   // width: rem(230);
   // height: rem(128);
-  font-family: "Manrope", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: rem(128);
-  line-height: 100%;
   color: #ffffff;
 
   background: linear-gradient(
@@ -114,13 +120,19 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  // text-fill-color: transparent;
-
-  opacity: 0.8;
+  text-fill-color: transparent;
 }
+
 .numberTwo {
-  width: rem(137);
-  height: rem(128);
+  background: linear-gradient(
+    180deg,
+    #b7add3 0%,
+    rgba(255, 173, 173, 0.22) 67.59%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .grant {
