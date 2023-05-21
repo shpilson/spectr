@@ -28,11 +28,44 @@ const FaqSection = () => {
   });
   let y = useTransform(scrollYProgress, [0, 1], ["-40%", "0%"]);
 
+  const titleAnimation = {
+    hidden: {
+      y: 50,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, delay: custom * 0.3 },
+    }),
+  };
+
+  const textAnimation = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      opacity: 1,
+      transition: { duration: 0.5, delay: custom * 0.3 },
+    }),
+  };
+
   return (
-    <div className={cn(s.faqSection)}>
+    <motion.div
+      className={cn(s.faqSection)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <div className="d-fl-col faqSection__container">
         <div ref={ref} className="titleIcon">
-          <h2 className={cn(s.titleSection, "title")}>Частые вопросы</h2>
+          <motion.h2
+            className={cn(s.titleSection, "title")}
+            variants={titleAnimation}
+            custom={2}
+          >
+            Частые вопросы
+          </motion.h2>
           <motion.span style={{ y }} className="iconTriangle">
             <img src={titleIcon} alt="иконка треугольника" />
           </motion.span>
@@ -52,9 +85,11 @@ const FaqSection = () => {
               if (el.isActive) {
                 // return <FaqBlock key={el.id} {...el} i={i} />;
                 return (
-                  <div
+                  <motion.div
                     className={cn(s.faqBlock, "d-fl-col")}
                     onClick={() => toggleAccordion(i)}
+                    variants={textAnimation}
+                    custom={i * 1.5}
                   >
                     <div className={cn(s.title, "d-fl")}>
                       <h2>{el.title}</h2>
@@ -69,14 +104,14 @@ const FaqSection = () => {
                     >
                       <p className={s.description}>{el.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               }
             })}
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

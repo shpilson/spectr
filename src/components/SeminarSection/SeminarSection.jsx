@@ -37,11 +37,30 @@ const SeminarSection = () => {
     ],
   };
 
+  const titleAnimation = {
+    hidden: {
+      y: 50,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, delay: custom * 0.3 },
+    }),
+  };
+
   return (
-    <div className={cn(s.seminarSection)}>
+    <motion.div
+      className={cn(s.seminarSection)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <div className="d-fl-col seminarSection__container">
         <div ref={ref} className="titleIcon">
-          <h2 className="title">Семинары</h2>
+          <motion.h2 className="title" variants={titleAnimation} custom={2}>
+            Семинары
+          </motion.h2>
           <motion.span style={{ y }} className="iconTriangle">
             <img src={titleIcon} alt="иконка треугольника" />
           </motion.span>
@@ -55,7 +74,7 @@ const SeminarSection = () => {
           })}
         </Slider>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

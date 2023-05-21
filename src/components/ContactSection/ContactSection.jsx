@@ -10,6 +10,41 @@ import {
   useScroll,
 } from "framer-motion";
 
+const titleAnimation = {
+  hidden: {
+    y: 50,
+    opacity: 0,
+  },
+  visible: (custom) => ({
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: custom * 0.3 },
+  }),
+};
+
+const blockAnimationLeft = {
+  hidden: {
+    x: -50,
+    opacity: 0,
+  },
+  visible: (custom) => ({
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: custom * 0.3 },
+  }),
+};
+const blockAnimationRight = {
+  hidden: {
+    x: 50,
+    opacity: 0,
+  },
+  visible: (custom) => ({
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: custom * 0.3 },
+  }),
+};
+
 const ContactSection = () => {
   let ref = useRef(null);
   let { scrollYProgress } = useScroll({
@@ -18,24 +53,40 @@ const ContactSection = () => {
   let y = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
 
   return (
-    <div className={cn(s.contactSection)} id="contact">
+    <motion.div
+      className={cn(s.contactSection)}
+      id="contact"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <div className="d-fl-col contactSection__container">
         <div ref={ref} className="titleIcon">
-          <h2 className="title">Контакты</h2>
+          <motion.h2 className="title" variants={titleAnimation} custom={2}>
+            Контакты
+          </motion.h2>
           <motion.span style={{ y }} className="iconTriangle">
             <img src={titleIcon} alt="иконка треугольника" />
           </motion.span>
         </div>
         <div className={s.grid}>
-          <div className={cn(s.contactLeft, "d-fl-col")}>
+          <motion.div
+            className={cn(s.contactLeft, "d-fl-col")}
+            variants={blockAnimationLeft}
+            custom={4}
+          >
             <Link className={s.link} to="tel:+88005553535">
               8(800)555-35-35
             </Link>
             <Link className={s.link} to="mailto:sales@spectr.ru">
               sales@spectr.ru
             </Link>
-          </div>
-          <div className={cn(s.contactFrom, "d-fl-col")}>
+          </motion.div>
+          <motion.div
+            className={cn(s.contactFrom, "d-fl-col")}
+            variants={blockAnimationRight}
+            custom={4}
+          >
             <p className={s.formText}>
               Оставьте заявку и наш менеджер свяжется с вами в ближайшее время
             </p>
@@ -117,10 +168,10 @@ const ContactSection = () => {
                 <span>Связаться</span>
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
