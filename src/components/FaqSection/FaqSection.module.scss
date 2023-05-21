@@ -12,6 +12,7 @@
 }
 
 .grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
   gap: rem(15);
@@ -187,5 +188,37 @@
   @media (max-width: 1000px) {
     font-size: clamp(rem(12), 1.8vw, rem(18));
     line-height: clamp(rem(16), 2.2vw, rem(22));
+  }
+}
+
+// background Triangle
+.triangleBackground {
+  position: absolute;
+  top: rem(90);
+  left: rem(-220);
+  width: rem(435);
+  height: rem(430);
+
+  @media (max-width: 1440px) {
+    left: adaptiv-num-rem(-120, -220, 1440, 768);
+  }
+
+  @media (max-width: 768px) {
+    width: adaptiv-num-rem(280, 440, 768, 480);
+    height: adaptiv-num-rem(275, 431, 768, 480);
+    left: adaptiv-num-rem(-140, -220, 768, 480);
+  }
+
+  @media (max-width: 480px) {
+    width: rem(280);
+    height: rem(275);
+    top: rem(180);
+    left: rem(-140);
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }

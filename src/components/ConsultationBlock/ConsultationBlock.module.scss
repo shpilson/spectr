@@ -3,7 +3,8 @@
 @import "../../assests/scss/variables";
 
 .consultationBlock {
-  margin-top: rem(145);
+  padding-top: rem(145);
+  position: relative;
 }
 
 .list {
@@ -11,4 +12,34 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(rem(330), 1fr));
   gap: rem(30);
+}
+
+.triangleBackground {
+  position: absolute;
+  top: rem(-60);
+  right: rem(-120);
+  width: rem(440);
+  height: rem(431);
+
+  @media (max-width: 1440px) {
+    right: adaptiv-num-rem(-290, -120, 1440, 768);
+  }
+
+  @media (max-width: 768px) {
+    width: adaptiv-num-rem(286, 440, 768, 480);
+    height: adaptiv-num-rem(282, 431, 768, 480);
+    right: adaptiv-num-rem(-120, -290, 768, 480);
+  }
+
+  @media (max-width: 480px) {
+    width: rem(286);
+    height: rem(282);
+    right: rem(-150);
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }

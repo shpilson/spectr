@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <div className="notFound__container">
-      <p>
-        Простите, по вашему запросу <br /> ничего не надено.
-      </p>
+    <div className={cn(s.notFound, "notFound__container d-fl-col")}>
+      <span className={s.number}>404</span>
+      <span className={s.text}>Упс. Ошибка.</span>
 
-      <Link to="/">На главную</Link>
+      <Link className={cn(s.link, "button__animation")} to="/">
+        <span>На главную</span>
+      </Link>
     </div>
   );
 };

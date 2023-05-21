@@ -7,6 +7,7 @@
 }
 
 .grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
   gap: rem(15);
@@ -17,6 +18,8 @@
 
 .contactLeft {
   gap: rem(5);
+  position: relative;
+  z-index: 1;
 }
 
 .link {
@@ -54,6 +57,8 @@
 
 .contactFrom {
   gap: rem(20);
+  position: relative;
+  z-index: 1;
 }
 
 .formText {
@@ -138,4 +143,31 @@
   background-color: transparent;
   cursor: pointer;
   padding: rem(24);
+}
+
+// background Triangle
+.triangleBackground {
+  position: absolute;
+  z-index: 0;
+  top: rem(120);
+  left: rem(-220);
+  width: rem(501);
+  height: rem(430);
+
+  @media (max-width: 1440px) {
+    left: adaptiv-num-rem(-200, -220, 1440, 768);
+  }
+
+  @media (max-width: 480px) {
+    width: rem(465);
+    height: rem(398);
+    top: rem(40);
+    left: rem(-190);
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
