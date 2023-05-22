@@ -18,7 +18,7 @@ const Logo = () => {
           >
             <g>
               <path
-                class="st0"
+                className="st0"
                 d="M67.8,57.9L51.4,29.6L35.2,1.3c-0.1-0.2-0.4-0.4-0.7-0.4S34,1.1,33.8,1.3l-2.3,4l-0.6,1l-2.4,4.2l-0.6,1
 		l-2.5,4.3l-0.6,1l-7.4,12.8L10,42.7l-0.6,1L7,47.8l-0.6,1L4,53l-0.6,1l-2.2,3.9c-0.1,0.2-0.1,0.6,0,0.8C1.3,58.9,1.6,59,1.9,59h0
 		L34.5,59l32.6,0.1c0,0,0,0,0,0c0.3,0,0.6-0.2,0.7-0.4C68,58.4,68,58.1,67.8,57.9z M18.4,30.1l6.8-11.9c0.1-0.2,0.4-0.2,0.5,0
@@ -40,10 +40,10 @@ const Logo = () => {
                 x2="67.9246"
                 y2="30"
               >
-                <stop offset="0" stop-color="#D2ADAC" />
-                <stop offset="0.328" stop-color="#D3C4AC" />
-                <stop offset="0.5925" stop-color="#ACCAD3" />
-                <stop offset="1" stop-color="#CDADD2" />
+                <stop offset="0" stopColor="#D2ADAC" />
+                <stop offset="0.328" stopColor="#D3C4AC" />
+                <stop offset="0.5925" stopColor="#ACCAD3" />
+                <stop offset="1" stopColor="#CDADD2" />
               </linearGradient>
             </defs>
           </svg>

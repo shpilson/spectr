@@ -75,8 +75,8 @@ const ConsultationBlock = () => {
               y2="289.107"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#D3CFAD" />
-              <stop offset="1" stop-color="#ADFFC4" stop-opacity="0" />
+              <stop stopColor="#D3CFAD" />
+              <stop offset="1" stopColor="#ADFFC4" stopOpacity="0" />
             </linearGradient>
           </defs>
         </motion.svg>

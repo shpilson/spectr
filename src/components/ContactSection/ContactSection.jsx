@@ -98,7 +98,7 @@ const ContactSection = () => {
                   name="name"
                   id="name"
                   required=""
-                  autocomplete="off"
+                  autoComplete="off"
                   placeholder=" "
                 />
                 <label htmlFor="name" className={s.label}>
@@ -112,7 +112,7 @@ const ContactSection = () => {
                   className={s.input}
                   name="company"
                   id="company"
-                  autocomplete="off"
+                  autoComplete="off"
                   placeholder=" "
                 />
                 <label htmlFor="company" className={s.label}>
@@ -127,7 +127,7 @@ const ContactSection = () => {
                   name="phone"
                   id="phone"
                   required=""
-                  autocomplete="off"
+                  autoComplete="off"
                   placeholder=" "
                 />
                 <label htmlFor="phone" className={s.label}>
@@ -142,7 +142,7 @@ const ContactSection = () => {
                   name="email"
                   id="email"
                   required=""
-                  autocomplete="off"
+                  autoComplete="off"
                   placeholder=" "
                 />
                 <label htmlFor="email" className={s.label}>
@@ -156,7 +156,7 @@ const ContactSection = () => {
                   className={cn(s.textarea, s.input)}
                   name="message"
                   id="message"
-                  autocomplete="off"
+                  autoComplete="off"
                   placeholder=" "
                 />
                 <label htmlFor="message" className={s.label}>
@@ -208,8 +208,8 @@ const ContactSection = () => {
                   y2="319.837"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#D3ADAD" />
-                  <stop offset="1" stop-color="#FFEDAD" stop-opacity="0.22" />
+                  <stop stopColor="#D3ADAD" />
+                  <stop offset="1" stopColor="#FFEDAD" stopOpacity="0.22" />
                 </linearGradient>
                 <linearGradient
                   id="paint1_linear_847_1402"
@@ -219,8 +219,8 @@ const ContactSection = () => {
                   y2="331.524"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#B7ADD3" />
-                  <stop offset="1" stop-color="#FFADAD" stop-opacity="0.22" />
+                  <stop stopColor="#B7ADD3" />
+                  <stop offset="1" stopColor="#FFADAD" stopOpacity="0.22" />
                 </linearGradient>
                 <linearGradient
                   id="paint2_linear_847_1402"
@@ -230,8 +230,8 @@ const ContactSection = () => {
                   y2="360.587"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#D3CFAD" />
-                  <stop offset="1" stop-color="#ADFFC4" stop-opacity="0" />
+                  <stop stopColor="#D3CFAD" />
+                  <stop offset="1" stopColor="#ADFFC4" stopOpacity="0" />
                 </linearGradient>
               </defs>
             </motion.svg>

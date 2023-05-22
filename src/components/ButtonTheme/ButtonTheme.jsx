@@ -8,12 +8,12 @@ const ButtonTheme = () => {
       <div className={cn(s.theme, "button__animation d-fl")}>
         <input
           type="checkbox"
-          class={s.customCheckbox}
+          className={s.customCheckbox}
           id="theme"
           name="theme"
           value="yes"
         ></input>
-        <label for="theme"></label>
+        <label htmlFor="theme"></label>
       </div>
     </>
   );

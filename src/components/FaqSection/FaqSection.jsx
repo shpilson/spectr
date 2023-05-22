@@ -100,8 +100,8 @@ const FaqSection = () => {
                   y2="187.486"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#B7ADD3" />
-                  <stop offset="1" stop-color="#FFADAD" stop-opacity="0.22" />
+                  <stop stopColor="#B7ADD3" />
+                  <stop offset="1" stopColor="#FFADAD" stopOpacity="0.22" />
                 </linearGradient>
               </defs>
             </motion.svg>
@@ -121,6 +121,7 @@ const FaqSection = () => {
                 // return <FaqBlock key={el.id} {...el} i={i} />;
                 return (
                   <motion.div
+                    key={el.id}
                     className={cn(s.faqBlock, "d-fl-col")}
                     onClick={() => toggleAccordion(i)}
                     variants={textAnimation}

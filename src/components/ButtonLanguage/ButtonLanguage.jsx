@@ -9,12 +9,12 @@ const ButtonLanguage = () => {
         <div className={cn(s.language, "button__animation d-fl")}>
           <input
             type="checkbox"
-            class={s.customCheckbox}
+            className={s.customCheckbox}
             id="language"
             name="language"
             value="yes"
           ></input>
-          <label for="language"></label>
+          <label htmlFor="language"></label>
         </div>
       </>
     </>
