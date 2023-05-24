@@ -94,6 +94,7 @@ const bigSquare2 = {
     transition: { duration: 0.7, delay: custom * 0.3 },
   }),
 };
+
 const bigSquare3 = {
   hidden: {
     opacity: 0,

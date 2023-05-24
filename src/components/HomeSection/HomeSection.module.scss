@@ -4,7 +4,11 @@
 
 .homeSection {
   position: relative;
-  margin-top: rem(60);
+  margin-top: rem(160);
+
+  @media (max-width: 480px) {
+    margin-top: rem(180);
+  }
 }
 
 .wrapperTitle {
@@ -150,13 +154,8 @@
   }
 
   @media (max-width: 480px) {
-    top: adaptiv-num-rem(-45, -40, 480, 360);
-    right: adaptiv-num-rem(-15, 30, 480, 360);
-  }
-
-  @media (max-width: 360px) {
-    top: rem(-45);
-    right: rem(-15);
+    top: rem(-70);
+    right: rem(30);
   }
 }
 
@@ -249,8 +248,8 @@
   }
 
   @media (max-width: 768px) {
-    left: rem(20);
-    bottom: rem(-5);
+    left: rem(10);
+    bottom: rem(-30);
   }
 }
 

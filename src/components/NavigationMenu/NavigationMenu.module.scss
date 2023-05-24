@@ -3,6 +3,8 @@
 @import "../../assests/scss/variables";
 
 .wrapper {
+  position: relative;
+  z-index: 1500;
   gap: rem(25);
   align-items: center;
   border: rem(1) solid $lightBlack;

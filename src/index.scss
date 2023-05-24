@@ -21,7 +21,7 @@ html {
   display: flex;
   flex-direction: column;
   position: relative;
-  // overflow: hidden;
+  overflow: hidden;
   background-color: #ffffff;
 }
 
@@ -60,7 +60,7 @@ html {
 // ---------MAIN-----------
 .main {
   flex: 1 1 auto;
-  overflow: hidden;
+  // overflow: hidden;
 }
 // ---------MAIN-----------
 
