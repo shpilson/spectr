@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import s from "./ContactSection.module.scss";
 import cn from "classnames";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import titleIcon from "./assets/images/photo/titleIcon.svg";
 import {
@@ -52,6 +54,36 @@ const ContactSection = () => {
   });
   let y = useTransform(scrollYProgress, [0, 1], ["-20%", "0%"]);
 
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_uck7ezm",
+        "template_yeokx4m",
+        form.current,
+        "cmw3Gi7A-4PvMA-7b"
+      )
+      .then(
+        () => {
+          Swal.fire({
+            title: "Спасибо! Ваша заявка принята.",
+            text: "Наш менеджер свяжется с Вами в ближайее время.",
+            icon: "success",
+            background: "white",
+            allowEnterKey: false,
+            confirmButtonColor: "#ffffff",
+          });
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
     <motion.div
       className={cn(s.contactSection)}
@@ -90,7 +122,11 @@ const ContactSection = () => {
             <p className={s.formText}>
               Оставьте заявку и наш менеджер свяжется с вами в ближайшее время
             </p>
-            <form className={cn(s.form, "d-fl-col")}>
+            <form
+              ref={form}
+              className={cn(s.form, "d-fl-col")}
+              onSubmit={sendEmail}
+            >
               <div className={s.item}>
                 <input
                   type="text"
@@ -163,8 +199,15 @@ const ContactSection = () => {
                   Сообщение
                 </label>
               </div>
-
-              <button className={cn(s.sendButton, "button__animation")}>
+              {/* <input
+                type="submit"
+                value="Связаться"
+                className={cn(s.sendButton, "button__animation")}
+              /> */}
+              <button
+                type="submit"
+                className={cn(s.sendButton, "button__animation")}
+              >
                 <span>Связаться</span>
               </button>
             </form>

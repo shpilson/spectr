@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="main">
+      <main className="main d-fl-col">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<NotFoundPage />} />

@@ -4,7 +4,7 @@
 
 .homeSection {
   position: relative;
-  margin-top: rem(160);
+  margin-top: rem(60);
 }
 
 .wrapperTitle {
@@ -130,7 +130,7 @@
 
 .triangleAbsolute {
   position: absolute;
-  z-index: 999;
+  z-index: 100;
   right: rem(160);
 
   top: rem(105);
@@ -144,13 +144,19 @@
   }
 
   @media (max-width: 768px) {
-    top: adaptiv-num-rem(-80, 180, 768, 480);
+    top: adaptiv-num-rem(-40, 180, 768, 480);
     right: rem(30);
-    z-index: 1000;
+    // z-index: 1000;
   }
 
   @media (max-width: 480px) {
-    top: rem(-80);
+    top: adaptiv-num-rem(-45, -40, 480, 360);
+    right: adaptiv-num-rem(-15, 30, 480, 360);
+  }
+
+  @media (max-width: 360px) {
+    top: rem(-45);
+    right: rem(-15);
   }
 }
 
