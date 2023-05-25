@@ -43,6 +43,7 @@ const AboutSection = () => {
   return (
     <motion.div
       className={cn(s.aboutSection)}
+      id="about"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

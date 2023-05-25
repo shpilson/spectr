@@ -31,6 +31,12 @@
 .switchButton {
   gap: rem(25);
 
+  & > div:first-child {
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+
   @media (max-width: 768px) {
     display: none;
   }

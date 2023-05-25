@@ -13,10 +13,6 @@
   -ms-border-radius: rem(50);
   -o-border-radius: rem(50);
   padding: rem(5);
-
-  @media (max-width: 1000px) {
-    display: none;
-  }
 }
 
 .customCheckbox {

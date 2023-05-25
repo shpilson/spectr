@@ -24,3 +24,141 @@
     }
   }
 }
+
+.wrapper {
+  padding: rem(30) 0;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.menuBurger {
+  overflow: scroll;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background-color: #ffffff;
+  color: #000000;
+  height: 100vh;
+  width: 100%;
+  // opacity: 0;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+}
+
+.animated {
+  z-index: 9999;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+}
+
+.imgClose {
+  cursor: pointer;
+  width: rem(56);
+  height: rem(40);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.wrapperContent {
+  padding: rem(40) 0;
+  gap: rem(30);
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.navigation {
+  justify-content: center;
+  align-items: center;
+}
+
+.list {
+  gap: rem(30);
+  li {
+    text-align: center;
+  }
+}
+
+.link {
+  font-weight: 500;
+  font-size: rem(24);
+  line-height: rem(30);
+  color: $lightBlack;
+
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: rem(1);
+    background-color: $lightBlack;
+    position: absolute;
+    bottom: rem(-2);
+    left: 0;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.switchButton {
+  gap: rem(25);
+}
+
+.contact {
+  flex: 0 0 auto;
+  align-self: center;
+
+  &::after {
+    border-radius: rem(24);
+    -webkit-border-radius: rem(24);
+    -moz-border-radius: rem(24);
+    -ms-border-radius: rem(24);
+    -o-border-radius: rem(24);
+  }
+}
+
+.linkButton {
+  position: relative;
+  display: block;
+  z-index: 1;
+  border: rem(1) solid $lightBlack;
+  border-radius: rem(24);
+  font-weight: 500;
+  font-size: rem(36);
+  line-height: rem(40);
+  color: $lightBlack;
+  -webkit-border-radius: rem(24);
+  -moz-border-radius: rem(24);
+  -ms-border-radius: rem(24);
+  -o-border-radius: rem(24);
+  padding: rem(30) rem(70);
+
+  @media (max-width: 768px) {
+    padding: rem(30) clamp(rem(62), 9.11vw, rem(70));
+  }
+}

@@ -53,6 +53,7 @@ const FaqSection = () => {
   return (
     <motion.div
       className={cn(s.faqSection)}
+      id="faq"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

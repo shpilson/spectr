@@ -52,6 +52,7 @@ const SeminarSection = () => {
   return (
     <motion.div
       className={cn(s.seminarSection)}
+      id="seminar"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
