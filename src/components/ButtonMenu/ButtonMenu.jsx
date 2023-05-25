@@ -5,6 +5,7 @@ import close from "./assets/images/icon/close.svg";
 import { Link } from "react-scroll";
 import { ButtonTheme } from "../ButtonTheme/ButtonTheme";
 import { ButtonLanguage } from "../ButtonLanguage/ButtonLanguage";
+import Media from "react-media";
 
 const ButtonMenu = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -134,10 +135,19 @@ const ButtonMenu = () => {
                 </ul>
               </nav>
 
-              <div className={cn(s.switchButton, "d-fl")}>
-                <ButtonTheme />
-                <ButtonLanguage />
-              </div>
+              <Media
+                query="(max-width: 1000px)"
+                render={() => (
+                  <div className={cn(s.switchButton, "d-fl")}>
+                    <ButtonTheme />
+
+                    <Media
+                      query="(max-width: 768px)"
+                      render={() => <ButtonLanguage />}
+                    />
+                  </div>
+                )}
+              />
             </div>
 
             <button className={cn(s.contact, "button__animation")}>

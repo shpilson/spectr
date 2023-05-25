@@ -57,6 +57,11 @@
       left: 0;
       background-color: $lightBlack;
       opacity: 0;
+      border-radius: rem(50);
+      -webkit-border-radius: rem(50);
+      -moz-border-radius: rem(50);
+      -ms-border-radius: rem(50);
+      -o-border-radius: rem(50);
     }
   }
 

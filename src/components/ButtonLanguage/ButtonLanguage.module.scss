@@ -49,6 +49,11 @@
       top: 0;
       left: 0;
       opacity: 0;
+      border-radius: rem(50);
+      -webkit-border-radius: rem(50);
+      -moz-border-radius: rem(50);
+      -ms-border-radius: rem(50);
+      -o-border-radius: rem(50);
     }
   }
 
