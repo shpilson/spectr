@@ -20,6 +20,10 @@ const ButtonMenu = () => {
   };
   bodyNoScroll();
 
+  // делаем 100vh на телефоне
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+
   return (
     <>
       <div
@@ -34,7 +38,7 @@ const ButtonMenu = () => {
       </div>
 
       <div className={cn(s.menuBurger, `${menuActive ? s.animated : " "}`)}>
-        <div className="menu__container d-fl-col">
+        <div className={cn(s.container, "menu__container d-fl-col")}>
           <div className={cn(s.wrapper, "d-fl-col")}>
             <div
               className={cn(s.imgClose)}
