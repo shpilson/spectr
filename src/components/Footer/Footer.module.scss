@@ -16,7 +16,6 @@
     font-weight: 400;
     font-size: rem(16);
     line-height: rem(20);
-    color: #171717;
 
     @media (max-width: 1000px) {
       font-size: clamp(rem(12), 1.6vw, rem(16));

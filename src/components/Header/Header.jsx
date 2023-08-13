@@ -23,27 +23,25 @@ const headerAnimation = {
 
 const Header = () => {
   return (
-    <>
-      <motion.header
-        className={cn(s.header)}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+    <motion.header
+      className={cn(s.header)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <motion.div
+        className={cn(s.wrapper, "d-fl")}
+        variants={headerAnimation}
+        custom={2}
       >
-        <motion.div
-          className={cn(s.wrapper, "d-fl")}
-          variants={headerAnimation}
-          custom={2}
-        >
-          <Logo />
-          <NavigationMenu />
-          <div className={cn(s.switchButton, "d-fl")}>
-            <ButtonTheme />
-            <ButtonLanguage />
-          </div>
-        </motion.div>
-      </motion.header>
-    </>
+        <Logo />
+        <NavigationMenu />
+        <div className={cn(s.switchButton, "d-fl")}>
+          <ButtonTheme />
+          <ButtonLanguage />
+        </div>
+      </motion.div>
+    </motion.header>
   );
 };
 

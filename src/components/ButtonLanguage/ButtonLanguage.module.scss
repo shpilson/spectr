@@ -5,8 +5,8 @@
 .language {
   position: relative;
   width: rem(100);
-  background: #ffffff;
-  border: rem(1) solid $lightBlack;
+  background: var(--background-color);
+  border: rem(1) solid var(--font-color);
   border-radius: rem(50);
   -webkit-border-radius: rem(50);
   -moz-border-radius: rem(50);

@@ -22,7 +22,7 @@ html {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: var(--background-color);
 }
 
 [class*="__container"] {
@@ -86,9 +86,16 @@ html {
     top: rem(-13);
   }
 
-  img {
+  svg {
     width: 100%;
     height: 100%;
+  }
+
+  & .pathStrokePainted {
+    stroke: var(--stroke-colorPainted);
+  }
+  & .pathStroke {
+    stroke: var(--stroke-color);
   }
 }
 
@@ -99,7 +106,6 @@ html {
   font-weight: 500;
   font-size: rem(64);
   line-height: rem(70);
-  color: $lightBlack;
 }
 
 .title {
@@ -120,7 +126,14 @@ html {
     width: rem(160);
     height: rem(90);
 
-    & img {
+    & .pathStrokePainted {
+      stroke: var(--stroke-colorPainted);
+    }
+    & .pathStroke {
+      stroke: var(--stroke-color);
+    }
+
+    & svg {
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -168,13 +181,12 @@ html {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    background-color: $lightBlack;
+    background-color: var(--font-color);
   }
 
   font-weight: 400;
   font-size: rem(20);
   line-height: rem(24);
-  color: $lightBlack;
 
   @media (max-width: 1000px) {
     font-size: clamp(rem(14), 2vw, rem(20));
@@ -235,7 +247,7 @@ html {
   }
 
   &:hover {
-    background-color: #ccdcce;
+    background-color: var(--background-arrow);
   }
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -250,14 +262,14 @@ html {
 }
 
 .slick-next {
-  background-image: url("../src/assests/image/icon/arrowNext.svg");
+  background-image: var(--background-arrowNext);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .slick-prev {
-  background-image: url("../src/assests/image/icon/arrowPrev.svg");
+  background-image: var(--background-arrowPrev);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -284,7 +296,7 @@ html {
       #adcad3 65.1%,
       #e5adff 100%
     );
-    color: #ffffff;
+    color: var(--background-color);
     opacity: 0;
     transition: opacity 0.3s;
     -webkit-transition: opacity 0.3s;
@@ -305,8 +317,9 @@ html {
 
 // swall button
 .swal2-confirm {
-  border: rem(1) solid $lightBlack !important;
-  color: $lightBlack !important;
+  border: rem(1) solid var(--font-color) !important;
+  color: var(--font-color) !important;
+  background-color: var(--background-color) !important;
 }
 
 .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
@@ -319,16 +332,6 @@ html {
   ) !important;
 }
 
-// .swal2-success-line-tip,
-// .swal2-success-line-long {
-//   background-color: $lightBlack !important;
-// }
-
-// .swal2-success-ring {
-//   border-color: $lightBlack !important;
-//   opacity: 0.4;
-// }
-
 .swal2-title,
 .swal2-html-container {
   font-family: "Montserrat" !important;
@@ -336,11 +339,6 @@ html {
   font-weight: 500 !important;
   font-size: rem(24) !important;
   line-height: rem(30) !important;
-  color: $lightBlack !important;
+  color: var(--font-color) !important;
   margin-top: rem(10) !important;
 }
-
-// burger menu
-// .menu__container {
-//   height: 100%;
-// }

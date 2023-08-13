@@ -43,6 +43,13 @@
   @media (max-width: 1000px) {
     width: clamp(rem(305), 73.5vw, rem(735));
   }
+
+  & .pathFill {
+    fill: var(--background-color);
+  }
+  & .pathStroke {
+    stroke: var(--font-color);
+  }
 }
 
 .titleTwo {
@@ -51,13 +58,14 @@
   line-height: rem(156);
   color: $white;
   letter-spacing: 0.2em;
-  text-shadow: -0 rem(-1) 0 $lightBlack, 0 rem(-1) 0 $lightBlack,
-    -0 rem(1) 0 $lightBlack, 0 rem(1) 0 $lightBlack, rem(-1) -0 0 $lightBlack,
-    rem(1) -0 0 $lightBlack, rem(-1) 0 0 $lightBlack, rem(1) 0 0 $lightBlack,
-    rem(-1) rem(-1) 0 $lightBlack, rem(1) rem(-1) 0 $lightBlack,
-    rem(-1) rem(1) 0 $lightBlack, rem(1) rem(1) 0 $lightBlack,
-    rem(-1) rem(-1) 0 $lightBlack, rem(1) rem(-1) 0 $lightBlack,
-    rem(-1) rem(1) 0 $lightBlack, rem(1) rem(1) 0 $lightBlack;
+  text-shadow: -0 rem(-1) 0 var(--font-color), 0 rem(-1) 0 var(--font-color),
+    -0 rem(1) 0 var(--font-color), 0 rem(1) 0 var(--font-color),
+    rem(-1) -0 0 var(--font-color), rem(1) -0 0 var(--font-color),
+    rem(-1) 0 0 var(--font-color), rem(1) 0 0 var(--font-color),
+    rem(-1) rem(-1) 0 var(--font-color), rem(1) rem(-1) 0 var(--font-color),
+    rem(-1) rem(1) 0 var(--font-color), rem(1) rem(1) 0 var(--font-color),
+    rem(-1) rem(-1) 0 var(--font-color), rem(1) rem(-1) 0 var(--font-color),
+    rem(-1) rem(1) 0 var(--font-color), rem(1) rem(1) 0 var(--font-color);
   text-transform: uppercase;
 
   @media (max-width: 1000px) {
@@ -115,12 +123,12 @@
   position: relative;
   display: block;
   z-index: 1;
-  border: rem(1) solid $lightBlack;
+  border: rem(1) solid var(--font-color);
   border-radius: rem(24);
   font-weight: 500;
   font-size: rem(36);
   line-height: rem(40);
-  color: $lightBlack;
+  color: var(--font-color);
   -webkit-border-radius: rem(24);
   -moz-border-radius: rem(24);
   -ms-border-radius: rem(24);

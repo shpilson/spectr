@@ -68,7 +68,38 @@ const FaqSection = () => {
             Частые вопросы
           </motion.h2>
           <motion.span style={{ y }} className="iconTriangle">
-            <img src={titleIcon} alt="иконка треугольника" />
+            <svg
+              width="70"
+              height="54"
+              viewBox="0 0 70 54"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.8"
+                d="M16 27.0005L56.5 3.61781V50.3832L16 27.0005Z"
+                fill="url(#paint0_linear_847_1413)"
+                className="pathStrokePainted"
+              />
+              <path
+                opacity="0.3"
+                d="M40 49.5167L0.999999 27L40 4.48335V49.5167Z"
+                className="pathStroke"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_847_1413"
+                  x1="16"
+                  y1="27.0005"
+                  x2="52.5"
+                  y2="27.0005"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#B7ADD3" />
+                  <stop offset="1" stop-color="#FFADAD" stop-opacity="0.22" />
+                </linearGradient>
+              </defs>
+            </svg>
           </motion.span>
         </div>
 
@@ -86,11 +117,12 @@ const FaqSection = () => {
                 opacity="0.8"
                 d="M320.406 352.478L56.0506 245.979L202.897 92.8295L320.406 352.478Z"
                 fill="url(#paint0_linear_847_1423)"
+                className={s.pathStrokePainted}
               />
               <path
                 opacity="0.4"
                 d="M198.43 124.371L315.12 382.21L52.6067 276.454L198.43 124.371Z"
-                stroke="#171717"
+                className={s.pathStroke}
               />
               <defs>
                 <linearGradient

@@ -60,7 +60,6 @@
   font-weight: 500;
   font-size: rem(22);
   line-height: rem(28);
-  color: $lightBlack;
 
   &:last-child {
     text-align: right;
@@ -151,6 +150,7 @@
   padding: 0 50% 50% 0;
   position: relative;
 
+  svg,
   img {
     position: absolute;
     top: 0;
@@ -158,5 +158,13 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+
+  & .letterGrant {
+    fill: var(--letter-color);
+  }
+
+  & .gradientTriangle {
+    stroke: var(--gradient-triangle);
   }
 }

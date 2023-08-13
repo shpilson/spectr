@@ -46,7 +46,64 @@ const ButtonMenu = () => {
                 setMenuActive(false);
               }}
             >
-              <img src={close} alt="кнопка закрыть" />
+              <svg
+                width="56"
+                height="40"
+                viewBox="0 0 56 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  className={s.rect1}
+                  x="0.5"
+                  y="0.5"
+                  width="55"
+                  height="39"
+                  rx="19.5"
+                />
+                <g clip-path="url(#clip0_1021_10170)">
+                  <g clip-path="url(#clip1_1021_10170)">
+                    <path
+                      className={s.stroke1}
+                      d="M21.6367 26.364L34.3646 13.6361"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      className={s.stroke2}
+                      d="M34.3643 26.364L21.6363 13.6361"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </g>
+                <rect
+                  className={s.rect2}
+                  x="0.5"
+                  y="0.5"
+                  width="55"
+                  height="39"
+                  rx="19.5"
+                />
+                <defs>
+                  <clipPath id="clip0_1021_10170">
+                    <rect
+                      width="24"
+                      height="24"
+                      fill="white"
+                      transform="translate(16 8)"
+                    />
+                  </clipPath>
+                  <clipPath id="clip1_1021_10170">
+                    <rect
+                      width="24"
+                      height="24"
+                      fill="white"
+                      transform="translate(16 8)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
             </div>
 
             <div className={cn(s.wrapperContent, "d-fl-col")}>
