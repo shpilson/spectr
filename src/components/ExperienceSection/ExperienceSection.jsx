@@ -100,30 +100,22 @@ const ExperienceSection = () => {
           <div className={cn(s.block, "d-fl-col")}>
             <span className={s.blockTitle}>Свыше</span>
             <div className={cn(s.number, s.numberOne, "number")}>
-              <ScrollTrigger
-                onEnter={() => setCounterOn(true)}
-                // onExit={() => setCounterOn(false)}
-              >
+              <ScrollTrigger onEnter={() => setCounterOn(true)}>
                 {counterOn && (
                   <CountUp start={0} end={350} duration={2} delay={0}></CountUp>
                 )}
               </ScrollTrigger>
-              {/* <img src={img350} alt="350 реализованных проектов" /> */}
             </div>
             <span className={s.blockTitle}>успешно реализованных проектов</span>
           </div>
           <div className={cn(s.block, "d-fl-col")}>
             <span className={s.blockTitle}>Более</span>
             <div className={cn(s.number, s.numberTwo)}>
-              <ScrollTrigger
-                onEnter={() => setCounterOn(true)}
-                // onExit={() => setCounterOn(false)}
-              >
+              <ScrollTrigger onEnter={() => setCounterOn(true)}>
                 {counterOn && (
                   <CountUp start={0} end={10} duration={4} delay={0}></CountUp>
                 )}
               </ScrollTrigger>
-              {/* <img src={img10} alt="10 лет на рынке" /> */}
             </div>
             <span className={s.blockTitle}>лет на рынке</span>
           </div>

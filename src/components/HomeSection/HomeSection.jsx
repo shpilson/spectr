@@ -384,7 +384,7 @@ const HomeSection = () => {
                 y="1.5"
                 width="7"
                 height="7"
-                className={cn(s.pathStroke, s.pathFill)}
+                className={s.pathSquare}
                 variants={smallSquare}
                 custom={9.5}
               />
@@ -402,7 +402,7 @@ const HomeSection = () => {
                 y="136.5"
                 width="7"
                 height="7"
-                className={cn(s.pathStroke, s.pathFill)}
+                className={s.pathSquare}
                 variants={smallSquare}
                 custom={7.5}
               />
@@ -420,7 +420,7 @@ const HomeSection = () => {
                 y="136.5"
                 width="7"
                 height="7"
-                className={cn(s.pathStroke, s.pathFill)}
+                className={s.pathSquare}
                 variants={smallSquare}
                 custom={5.5}
               />
@@ -438,7 +438,7 @@ const HomeSection = () => {
                 y="1.5"
                 width="7"
                 height="7"
-                className={cn(s.pathStroke, s.pathFill)}
+                className={s.pathSquare}
                 variants={smallSquare}
                 custom={11.5}
               />
@@ -456,7 +456,7 @@ const HomeSection = () => {
                 y="69.5"
                 width="7"
                 height="7"
-                className={cn(s.pathStroke, s.pathFill)}
+                className={s.pathSquare}
                 variants={smallSquare}
                 custom={5.5}
               />
@@ -504,36 +504,114 @@ const HomeSection = () => {
       <motion.div className={s.triangleAbsolute} ref={ref} style={{ y }}>
         <div className={s.triangleWrapper}>
           <div className={cn(s.triangle, s.triangleOne)}>
-            <motion.img
-              src={triangle}
-              alt="Треугольник фон"
+            <motion.svg
               variants={triangleOneAnimation}
               custom={2}
-            />
+              width="285"
+              height="356"
+              viewBox="0 0 285 356"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.4"
+                d="M0.99892 354.56L142.498 1.74739L283.996 354.56L0.99892 354.56Z"
+                className={s.pathStroke}
+              />
+            </motion.svg>
           </div>
           <div className={cn(s.triangle, s.triangleTwo)}>
-            <motion.img
-              src={triangleTwo}
-              alt="Треугольник фон"
+            <motion.svg
               variants={triangleTwoAnimation}
               custom={2}
-            />
+              width="285"
+              height="356"
+              viewBox="0 0 285 356"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.8"
+                d="M142.498 0.404175L284.736 355.06L0.259674 355.06L142.498 0.404175Z"
+                fill="url(#paint0_linear_1030_2168)"
+                className={s.pathStrokePainted}
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1030_2168"
+                  x1="142.498"
+                  y1="0.404185"
+                  x2="142.498"
+                  y2="320.032"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#D3ADAD" />
+                  <stop offset="1" stop-color="#FFEDAD" stop-opacity="0.22" />
+                </linearGradient>
+              </defs>
+            </motion.svg>
           </div>
           <div className={cn(s.triangle, s.triangleThree)}>
-            <motion.img
-              src={triangleThree}
-              alt="Треугольник фон"
+            <motion.svg
               variants={triangleThreeAnimation}
               custom={2}
-            />
+              width="285"
+              height="356"
+              viewBox="0 0 285 356"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.8"
+                d="M142.498 0.404175L284.736 355.06L0.259674 355.06L142.498 0.404175Z"
+                fill="url(#paint0_linear_1030_2169)"
+                className={s.pathStrokePainted}
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1030_2169"
+                  x1="142.498"
+                  y1="0.404185"
+                  x2="142.498"
+                  y2="320.032"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#B7ADD3" />
+                  <stop offset="1" stop-color="#FFADAD" stop-opacity="0.22" />
+                </linearGradient>
+              </defs>
+            </motion.svg>
           </div>
           <div className={cn(s.triangle, s.triangleFour)}>
-            <motion.img
-              src={triangleFour}
-              alt="Треугольник фон"
+            <motion.svg
               variants={triangleFourAnimation}
               custom={2}
-            />
+              width="285"
+              height="355"
+              viewBox="0 0 285 355"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.8"
+                d="M142.242 0L284.48 354.656L0.00430298 354.656L142.242 0Z"
+                fill="url(#paint0_linear_1030_2170)"
+                className={s.pathStrokePainted}
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1030_2170"
+                  x1="142.242"
+                  y1="9.37632e-06"
+                  x2="125.241"
+                  y2="386.835"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#D3CFAD" />
+                  <stop offset="1" stop-color="#ADFFC4" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </motion.svg>
           </div>
         </div>
       </motion.div>
@@ -541,36 +619,114 @@ const HomeSection = () => {
       <motion.div className={s.triangleAbsolute2} ref={ref} style={{ y }}>
         <div className={s.triangleWrapper2}>
           <div className={cn(s.triangle2, s.triangleOne2)}>
-            <motion.img
-              src={triangle}
-              alt="Треугольник фон"
+            <motion.svg
               variants={triangleOneAnimation2}
               custom={2}
-            />
+              width="285"
+              height="356"
+              viewBox="0 0 285 356"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.4"
+                d="M0.99892 354.56L142.498 1.74739L283.996 354.56L0.99892 354.56Z"
+                className={s.pathStroke}
+              />
+            </motion.svg>
           </div>
           <div className={cn(s.triangle2, s.triangleTwo2)}>
-            <motion.img
-              src={triangleTwo}
-              alt="Треугольник фон"
+            <motion.svg
               variants={triangleTwoAnimation2}
               custom={2}
-            />
+              width="285"
+              height="356"
+              viewBox="0 0 285 356"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.8"
+                d="M142.498 0.404175L284.736 355.06L0.259674 355.06L142.498 0.404175Z"
+                fill="url(#paint0_linear_1030_2168)"
+                className={s.pathStrokePainted}
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1030_2168"
+                  x1="142.498"
+                  y1="0.404185"
+                  x2="142.498"
+                  y2="320.032"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#D3ADAD" />
+                  <stop offset="1" stop-color="#FFEDAD" stop-opacity="0.22" />
+                </linearGradient>
+              </defs>
+            </motion.svg>
           </div>
           <div className={cn(s.triangle2, s.triangleThree2)}>
-            <motion.img
-              src={triangleThree}
-              alt="Треугольник фон"
+            <motion.svg
               variants={triangleThreeAnimation2}
               custom={2}
-            />
+              width="285"
+              height="356"
+              viewBox="0 0 285 356"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.8"
+                d="M142.498 0.404175L284.736 355.06L0.259674 355.06L142.498 0.404175Z"
+                fill="url(#paint0_linear_1030_2169)"
+                className={s.pathStrokePainted}
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1030_2169"
+                  x1="142.498"
+                  y1="0.404185"
+                  x2="142.498"
+                  y2="320.032"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#B7ADD3" />
+                  <stop offset="1" stop-color="#FFADAD" stop-opacity="0.22" />
+                </linearGradient>
+              </defs>
+            </motion.svg>
           </div>
           <div className={cn(s.triangle2, s.triangleFour2)}>
-            <motion.img
-              src={triangleFour}
-              alt="Треугольник фон"
+            <motion.svg
               variants={triangleFourAnimation2}
               custom={2}
-            />
+              width="285"
+              height="355"
+              viewBox="0 0 285 355"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.8"
+                d="M142.242 0L284.48 354.656L0.00430298 354.656L142.242 0Z"
+                fill="url(#paint0_linear_1030_2170)"
+                className={s.pathStrokePainted}
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_1030_2170"
+                  x1="142.242"
+                  y1="9.37632e-06"
+                  x2="125.241"
+                  y2="386.835"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#D3CFAD" />
+                  <stop offset="1" stop-color="#ADFFC4" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </motion.svg>
           </div>
         </div>
       </motion.div>

@@ -4,14 +4,19 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 const ButtonTheme = () => {
+  const isDarkTheme = window?.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+  const defaultTheme = isDarkTheme ? "dark" : "light";
+  console.log(isDarkTheme);
+
   const [theme, setTheme] = useState(
-    localStorage.getItem("app-theme") || "light"
+    localStorage.getItem("app-theme") || defaultTheme
   ); // state темы
 
   // функция для смены темы
   const toggleTheme = (event) => {
     setTheme(theme === "light" ? "dark" : "light"); // меняем state
-    console.log("dsd");
   };
 
   useEffect(() => {
