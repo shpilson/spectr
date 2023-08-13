@@ -1,0 +1,40 @@
+:root {
+  /* светлая тема */
+  --background-color-light: #ffffff;
+  --font-color-light: #171717;
+  --stroke-colorPainted-light: none;
+  --stroke-color-light: #838883;
+  --letter-color-light: #292929;
+
+  --gradient-triangle-light: url(#paint0_linear_1061_3715);
+
+  --background-arrowNext-light: url("../image/icon/arrowNext.svg");
+  --background-arrowPrev-light: url("../image/icon/arrowPrev.svg");
+  --background-arrow-light: #ccdcce;
+
+  /* темная тема */
+  --background-color-dark: #202020;
+  --font-color-dark: #ffffff;
+  --stroke-colorPainted-dark: #838883;
+  --stroke-color-dark: #838883;
+  --letter-color-dark: #ffffff;
+
+  --gradient-triangle-dark: url(#paint0_linear_1165_4896);
+
+  --background-arrowNext-dark: url("../image/icon/arrowNextWhite.svg");
+  --background-arrowPrev-dark: url("../image/icon/arrowPrevWhite.svg");
+  --background-arrow-dark: #2d2d2d;
+
+  /* действуюшая тема */
+  --background-color: var(--background-color-light);
+  --font-color: var(--font-color-light);
+  --stroke-colorPainted: var(--stroke-colorPainted-light);
+  --stroke-color: var(--stroke-color-light);
+  --letter-color: var(--letter-color-light);
+
+  --gradient-triangle: var(--gradient-triangle-light);
+
+  --background-arrowPrev: var(--background-arrowNext-light);
+  --background-arrowNext: var(--background-arrowPrev-light);
+  --background-arrow: var(--background-arrow-light);
+}

@@ -72,7 +72,7 @@ const ContactSection = () => {
             title: "Спасибо! Ваша заявка принята.",
             text: "Наш менеджер свяжется с Вами в ближайее время.",
             icon: "success",
-            background: "white",
+            background: "var(--background-color)",
             allowEnterKey: false,
             confirmButtonColor: "#ffffff",
           });
@@ -98,7 +98,50 @@ const ContactSection = () => {
             Контакты
           </motion.h2>
           <motion.span style={{ y }} className="iconTriangle">
-            <img src={titleIcon} alt="иконка треугольника" />
+            <svg
+              width="70"
+              height="54"
+              viewBox="0 0 70 54"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.8"
+                d="M16 27.0005L56.5 3.61781V50.3832L16 27.0005Z"
+                fill="url(#paint0_linear_847_1388)"
+                className="pathStrokePainted"
+              />
+              <path
+                opacity="0.3"
+                d="M40 49.5167L0.999999 27L40 4.48335V49.5167Z"
+                fill="url(#paint1_linear_847_1388)"
+                className="pathStroke"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_847_1388"
+                  x1="16"
+                  y1="27.0005"
+                  x2="52.5"
+                  y2="27.0005"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#D3ADAD" />
+                  <stop offset="1" stop-color="#FFEDAD" stop-opacity="0.22" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_847_1388"
+                  x1="1.18021e-06"
+                  y1="27"
+                  x2="36.5"
+                  y2="27"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#D3ADAD" />
+                  <stop offset="1" stop-color="#FFEDAD" stop-opacity="0.22" />
+                </linearGradient>
+              </defs>
+            </svg>
           </motion.span>
         </div>
         <div className={s.grid}>
@@ -226,21 +269,25 @@ const ContactSection = () => {
                 opacity="0.4"
                 d="M59.3408 232.439L337.898 182.404L171.108 411.05L59.3408 232.439Z"
                 stroke="#171717"
+                className={s.pathStroke}
               />
               <path
                 opacity="0.8"
                 d="M367.712 193.378L199.752 423.627L87.2006 243.763L367.712 193.378Z"
                 fill="url(#paint0_linear_847_1402)"
+                className={s.pathStrokePainted}
               />
               <path
                 opacity="0.8"
                 d="M396.384 205.065L228.424 435.315L115.873 255.451L396.384 205.065Z"
                 fill="url(#paint1_linear_847_1402)"
+                className={s.pathStrokePainted}
               />
               <path
                 opacity="0.8"
                 d="M428.83 218.288L260.87 448.537L148.318 268.674L428.83 218.288Z"
                 fill="url(#paint2_linear_847_1402)"
+                className={s.pathStrokePainted}
               />
               <defs>
                 <linearGradient

@@ -42,4 +42,11 @@
     height: 100%;
     object-fit: contain;
   }
+
+  & .pathStrokePainted {
+    stroke: var(--stroke-colorPainted);
+  }
+  & .pathStroke {
+    stroke: var(--stroke-color);
+  }
 }

@@ -55,7 +55,37 @@ const AboutSection = () => {
               О нас
             </motion.h2>
             <motion.span style={{ y }} className="iconTriangle">
-              <img src={titleIcon} alt="иконка треугольника" />
+              <svg
+                width="70"
+                height="54"
+                viewBox="0 0 70 54"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="pathStrokePainted"
+                  d="M16 27.0006L56.5 3.61793V50.3833L16 27.0006Z"
+                  fill="url(#paint0_linear_847_2747)"
+                />
+                <path
+                  opacity="0.3"
+                  d="M40 49.5167L0.999999 27L40 4.48335V49.5167Z"
+                  className="pathStroke"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_847_2747"
+                    x1="16"
+                    y1="27.0006"
+                    x2="60.2188"
+                    y2="28.3506"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#D3CFAD" />
+                    <stop offset="1" stop-color="#ADFFC4" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </motion.span>
           </div>
 

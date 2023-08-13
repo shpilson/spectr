@@ -6,13 +6,25 @@
   position: relative;
   width: rem(100);
   background: #ffffff;
-  border: rem(1) solid $lightBlack;
+  border: rem(1) solid var(--font-color);
   border-radius: rem(50);
   -webkit-border-radius: rem(50);
   -moz-border-radius: rem(50);
   -ms-border-radius: rem(50);
   -o-border-radius: rem(50);
   padding: rem(5);
+  overflow: hidden;
+  touch-action: none;
+  -ms-touch-action: none;
+
+  &::after {
+    content: "";
+    border-radius: rem(50);
+    -webkit-border-radius: rem(50);
+    -moz-border-radius: rem(50);
+    -ms-border-radius: rem(50);
+    -o-border-radius: rem(50);
+  }
 }
 
 .customCheckbox {
@@ -55,7 +67,7 @@
       z-index: -1;
       top: 0;
       left: 0;
-      background-color: $lightBlack;
+      background-color: var(--background-color);
       opacity: 0;
       border-radius: rem(50);
       -webkit-border-radius: rem(50);
@@ -80,6 +92,12 @@
         #adcad3 65.1%,
         #e5adff 100%
       );
+
+      border-radius: rem(50);
+      -webkit-border-radius: rem(50);
+      -moz-border-radius: rem(50);
+      -ms-border-radius: rem(50);
+      -o-border-radius: rem(50);
     }
   }
 
